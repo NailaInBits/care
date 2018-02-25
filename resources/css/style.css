@@ -4,6 +4,15 @@ body {
     position: relative;
 }
 
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
 #backgroundCarousel {
     position: fixed;
     width: 100%;
@@ -22,12 +31,27 @@ body {
     padding: 10%;
 }
 
+#title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+#subtitle {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+}
+
 #about {
-    background-color: white;
-    opacity: 0.7
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: rgba(255,255,255,0.75);
+    padding: 5%;
 }
 
-#aboutAid {
-    opacity: 1;
+#getStarted {
+    padding-top: 5%;
 }
-

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="resources/css/style.css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
+
+	<title>Help And Resources </title>
+
+	    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+
+       a{
+       	color: black;
+
+       }
+    </style>
+
+</head>
+
+
+<!--Nav bar Antara's version--> 
+<header>
+	<nav class="navbar navbar-light" style="background-color: #A6CFD5;">
+	  <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="nav justify-content-end">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="index.html">Home </a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Crisis Tweets</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Help and Resources <span class="sr-only">(current)</span></a>
+	      </li>
+	       <li class="nav-item">
+	        <a class="nav-link" href="#">Crisis Statistics</a>
+	      </li>
+	        <li class="nav-item">
+	        	<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#contactUs" data-whatever="@getbootstrap">Contact Us</button>
+	      </li>
+	      <li>
+	      	<a class="navbar-brand" href="#">
+    			<img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+ 			 </a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+</header>
+
+<body>
+
+<!--Message for the audience -->
+	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4 text-center">We are here to help</h1>
+		</div>
+	</div>
+
+
+
+   <!-- Card, Search, Map, Filters centering starts--> 
+   <div class="mx-auto" style="width: 50rem; height: 50rem;">
+
+   	<!-- Search needs the icon --> 
+   	 <div class="card-header text-inline">
+    	  	<nav class="navbar navbar-light bg-faded">
+	  			<form class="form-inline my-2 my-lg-0">
+				    <input class="form-control mr-sm-4" type="text" placeholder="Enter a Zipcode Below">
+				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				  </form>
+			</nav>
+  	</div>
+
+
+
+   <div id="map"></div>
+
+  <div class="card-body text-center">
+    <h5 class="card-title">Choose Help</h5>
+
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item">Shelter</li>
+	    <li class="list-group-item">Medical Help</li>
+	    <li class="list-group-item">Food</li>
+	    <li class="list-group-item">Charging Stations</li>
+	  </ul>
+	</div>
+</div> <!-- Card, Search, Map, Filters centering ends here --> 
+
+  </body>
+
+
+  	<!-- Js for google map --> 
+  	    <script>
+/*
+      To look up data 
+      http://www1.nyc.gov/assets/dhs/downloads/pdf/intake_drop_in_centers.pdf
+*/
+      //Displays New York by defualt
+      function initMap(){
+      //Add cool constrains later
+      var newYork = {
+        zoom:12,
+        center:{lat: 40.7128, lng: -74.0060}
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), newYork);
+
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        addMarker({coords:event.latLng});
+      });
+
+ 
+      // Array of fake markers for shelter
+      /*Custom Markers 
+      https://mapicons.mapsmarker.com/*/
+
+      var shelters = [
+        {
+          coords:{lat:40.7128,lng:-74.0068},
+          iconImage:'',
+          content:'<h1>Shelter 1</h1>'
+        },
+        {
+          coords:{lat:40.7222,lng:-74.0068},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h1>Shelter 2</h1>'
+        },
+        {
+          coords:{lat:40.7333,lng:-74.0068},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'Shelter 3</h1>'
+        }
+        ];
+
+        var medicals = [ 
+        {
+          coords:{lat:40.7128,lng:-74.0072},
+          iconImage:'https://drive.google.com/file/d/1fj0aYi2cH6ddxVE7a5mezqMklal-zIrn/view?usp=sharing',
+          content:'<h1>Hospital 1</h1'
+        },
+        {
+          coords:{lat:40.7128,lng:-74.0432},
+          content:'<h1>Hospital 2</h1>'
+        },
+         {
+          coords:{lat:40.7428,lng:-74.0272},
+          content:'<h1>Hospital 3</h1>'
+        }
+      ];
+
+       var food = [ 
+        {
+          coords:{lat:40.7328,lng:-74.0072},
+          iconImage:'https://drive.google.com/file/d/1fj0aYi2cH6ddxVE7a5mezqMklal-zIrn/view?usp=sharing',
+          content:'<h1>Food 1</h1'
+        },
+        {
+          coords:{lat:40.7148,lng:-74.0432},
+          content:'<h1>Food 2</h1>'
+        }
+      ];
+
+        var chargingStations = [ 
+        {
+          coords:{lat:40.7528,lng:-74.1072},
+          iconImage:'https://drive.google.com/file/d/1fj0aYi2cH6ddxVE7a5mezqMklal-zIrn/view?usp=sharing',
+          content:'<h1>Charging Station 1</h1'
+        },
+        {
+          coords:{lat:40.7248,lng:-74.0332},
+          content:'<h1>Charging Station 2 </h1>'
+        }
+      ];
+
+
+      // Loop through shelter markers 
+      for(var i = 0; i < shelters.length;i++){
+        // Add marker
+        addMarker(shelters[i]);
+      }
+
+      // Loop through medical markers 
+      for (var i = 0; i < medicals.length; i++){
+        addMarker(medicals[i]);
+      }
+
+       // Loop through food markers 
+      for (var i = 0; i < food.length; i++){
+        addMarker(food[i]);
+      }
+
+       // Loop through charging stations markers 
+      for (var i = 0; i < chargingStations.length; i++){
+        addMarker(chargingStations[i]);
+      }
+
+
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+    </script>
+
+<!-- Contact Us Form pops up --> 
+<div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">First Name</label>
+            <input type="text" class="form-control" id="recipient-Fname" placeholder="Antara">
+          </div>
+            <div class="form-group">
+              <label for="recipient-name" class="form-control-label">Last Name</label>
+              <input type="text" class="form-control" id="recipient-Lname" placeholder="Khan">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Your Feedback</label>
+            <textarea class="form-control" id="message-text" placeholder="Thank you!"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Js for google map --> 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsB2qWG_wf5-5nUBtadNENQVSZrHSm0YI&callback=initMap">
+    </script>
+
+	<!-- jQuery, Popper.js, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

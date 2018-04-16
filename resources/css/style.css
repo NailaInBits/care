@@ -56,3 +56,40 @@ h3 {
 #getStarted {
     padding-top: 5%;
 }
+
+#twitterFeed {
+    margin: 10vh;
+}
+
+.tweet {
+    border: 1px solid lightgray;
+    border-width: 1px 1px 1px 1px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tweet .image {
+    width: 48px;
+    margin:0.5em;
+    padding:0px;
+}
+
+.tweet .image img {
+    border: 1px solid white;
+    border-radius: 0.5em;
+    margin: 0px;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.username {
+    color: gray;
+}
+
+.vbox { 
+    display: flex; 
+    flex-direction: column; 
+}

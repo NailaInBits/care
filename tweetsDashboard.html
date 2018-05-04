@@ -45,14 +45,17 @@
 	
 	<!-- Tweet Dashboard || Left: Tweets Feed || Right: Tweet Map -->
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-3" id="twitterFeed"></div>
-			<div class="col-lg-3" id="twitterStatic">
-				<a class="twitter-timeline" href="https://twitter.com/UN?ref_src=twsrc%5Etfw">Tweets by UN</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<div class="col-lg-6">
+			<div class="row" id="twitter">
+				<h2>Hurricane Sandy Twitter Feed</h2>
+				<div class="col-lg-12" id="twitterStatic">
+					<a class="twitter-timeline" data-width="800" data-height="500" data-chrome="nofooter transparent noheader transparent" data-partner="tweetdeck" href="https://twitter.com/thathijabae/timelines/992233943029223429?ref_src=twsrc%5Etfw"></a> 
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
 			</div>
-			<div class="col-lg-3">
-				<a class="twitter-timeline"  href="https://twitter.com/search?q=Sandy%2C%20OR%20Hurricane%2C%20OR%20Help%2C%20OR%20Hurricane%20OR%20Sandy%20near%3A%22New%20York%2C%20NY%22%20within%3A15mi%20since%3A2012-10-27%20until%3A2012-11-10" data-widget-id="989215020373434368">Tweets about Sandy, OR Hurricane, OR Help, OR Hurricane OR Sandy near:"New York, NY" within:15mi since:2012-10-27 until:2012-11-10</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<div class="row" id="feed">
+				<h2>Realtime Twitter Feed</h2>
+				<div class="col-lg-12" id="twitterFeed"></div> 
 			</div>
 		</div>
 	</div>

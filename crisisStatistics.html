@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="resources/css/style.css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
+
+	<!-- D3 -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+
+	<title>Crisis Stats</title>
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Tweets Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Google Maps Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Crisis Statistics</a>
+				</li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#contactUs" data-whatever="@getbootstrap">Contact Us</button>
+			</form>
+		</div>
+	</nav>
+	<!-- Contact Us Form pops up --> 
+	<div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<div class="modal-body">
+			<form>
+				<div class="form-group">
+					<label for="recipient-name" class="form-control-label">First Name</label>
+					<input type="text" class="form-control" id="recipient-Fname" placeholder="Antara">
+	          </div>
+	            <div class="form-group">
+	              <label for="recipient-name" class="form-control-label">Last Name</label>
+	              <input type="text" class="form-control" id="recipient-Lname" placeholder="Khan">
+	          </div>
+	          <div class="form-group">
+	            <label for="message-text" class="form-control-label">Your Feedback</label>
+	            <textarea class="form-control" id="message-text" placeholder="Thank you!"></textarea>
+	          </div>
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Send message</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="col-lg-12" id="d3Chart">
+			<div class="row" id="crisisStats">
+				<div id="sequence"></div>
+				<div id="chart">
+					<div id="explanation" style="visibility: hidden;">
+						<span id="percentage"></span><br/>
+						<p> is the number of Hurricane Sandy related Tweets about this topic during this time. </p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="statsSidebar">
+					<div class="col-lg-4">
+						<h5>Legend</h5>
+						<p style="background-color:#821F00; color:white;">#HurricaneSandy, #Sandy</p>
+						<p style="background-color:#5F4D0D; color:white;">#Shelter</p>
+						<p style="background-color:#FFB236; color:white;">#Aid, #Help</p>
+						<p style="background-color:#924A31; color:white;">#Blackout, #Flooding</p>
+						<p style="background-color:#FFD25D; color:white;">#Fundrasing, #Donate</p>
+						<p style="background-color:#bbbbbb; color:white;">#FDNY, #NYPD, #RedCross</p>
+					</div>
+				</div>
+				<script type="text/javascript" src="resources/js/d3Visualization.js"></script>
+			</div>
+		</div>
+	</div>
+  
+	<!-- jQuery, Popper.js, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script type="text/javascript' src='config.js"></script>
+	<script type="text/javascript' src='script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

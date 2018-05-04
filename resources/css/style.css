@@ -93,3 +93,8 @@ h3 {
     display: flex; 
     flex-direction: column; 
 }
+
+#twitterStatic {
+    margin: 8vh;
+    height: 50px;
+}

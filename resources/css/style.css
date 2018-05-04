@@ -57,6 +57,12 @@ h3 {
     padding-top: 5%;
 }
 
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
 #twitter {
     margin: 10vh;
 }

@@ -57,6 +57,13 @@ h3 {
     padding-top: 5%;
 }
 
+#twitter {
+    margin: 10vh;
+}
+.twitter-timeline {
+    margin-bottom: 2vh;
+    max-height: 50vh;
+}
 #feed {
     margin: 10vh;
     margin-top: 0;
@@ -97,10 +104,3 @@ h3 {
     flex-direction: column; 
 }
 
-#twitter {
-    margin: 10vh;
-}
-.twitter-timeline {
-    margin-bottom: 2vh;
-    max-height: 50vh;
-}

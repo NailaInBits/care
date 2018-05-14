@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,36 +13,67 @@
 	<!-- Google Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
 
-	<title>Tweets Dashboard</title>
+	<title>News & Resources</title>
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" href="https://nailainbits.github.io/care/">Home</a>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Tweets Dashboard <span class="sr-only">(current)</span> </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Google Maps Dashboard</a>
+					<a class="nav-link" href="#">News & Resources <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Crisis Statistics</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="button">Contact Us</button>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#contactUs" data-whatever="@getbootstrap">Contact Us</button>
 			</form>
 		</div>
 	</nav>
-	
+
+	<!-- Contact Us Form Pop Up --> 
+	<div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="recipient-name" class="form-control-label">First Name</label>
+							<input type="text" class="form-control" id="recipient-Fname" placeholder="Jane">
+						</div>
+						<div class="form-group">
+							<label for="recipient-name" class="form-control-label">Last Name</label>
+							<input type="text" class="form-control" id="recipient-Lname" placeholder="Doe">
+						</div>
+						<div class="form-group">
+							<label for="message-text" class="form-control-label">Your Feedback</label>
+							<textarea class="form-control" id="message-text" placeholder="Thank you!"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Send message</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Tweet Dashboard -->
 	<div class="container-fluid">
 		<div class="col-lg-6">
@@ -54,7 +85,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-6">
+		<div class="col-lgtw-6">
 			<div id="feed">
 				<h2>Realtime Twitter Feed</h2>
 				<div id="twitterFeed"></div> 
@@ -62,17 +93,17 @@
 		</div>
 	</div>
 
+	<!-- PubNub JS -->
+	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.2.min.js"></script>
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="resources/js/twitter.js"></script>
+
 	<!-- jQuery, Popper.js, Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script type="text/javascript' src='config.js"></script>
 	<script type="text/javascript' src='script.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-	<!-- PubNub JS -->
-	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.2.min.js"></script>
-
-	<!-- JavaScript -->
-	<script type="text/javascript" src="resources/js/twitter.js"></script>
 </body>
 </html>

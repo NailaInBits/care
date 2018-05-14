@@ -1,161 +1,165 @@
 body {
-    height: 100%;
-    width: 100%;
-    position: relative;
+	height: 100%;
+	width: 100%;
+	position: relative;
 }
 
 p {
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 h3 {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
 }
 
+/****************** Index.html ******************/
 #backgroundCarousel {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 
 #content-wrapper {
-    position: absolute;
-    z-index: 1 !important;
-    min-width: 100%;
-    min-height: 100%;
+	position: absolute;
+	z-index: 1 !important;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .container {
-    padding: 10%;
+	padding: 10%;
 }
 
 #title {
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    font-size: larger;
-    color: white;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	font-size: larger;
+	color: white;
 }
 
 #subtitle {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 2px;
-    color: white;
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 2px;
+	color: white;
 }
 
 #about {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    color: black;
-    background-color: rgba(255,255,255,0.75);
-    padding: 5%;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+	background-color: rgba(255,255,255,0.75);
+	padding: 5%;
 }
 
 #getStarted {
-    padding-top: 5%;
+	padding-top: 5%;
 }
 
 #map {
-    height: 400px;
-    width: 100%;
+	height: 400px;
+	width: 100%;
 }
 
-
+/****************** Tweets Module ******************/
 #twitter {
-    margin: 10vh;
+	margin: 10vh;
 }
+
 .twitter-timeline {
-    margin-bottom: 2vh;
-    max-height: 50vh;
+	margin-bottom: 2vh;
+	max-height: 50vh;
 }
+
 #feed {
-    margin: 10vh;
-    margin-top: 0;
-    max-width: 40vh;
-    height: 60vh;
+	margin: 10vh;
+	margin-top: 0;
+	max-width: 40vh;
+	height: 60vh;
 }
 
 .tweet {
-    border: 1px solid lightgray;
-    border-width: 1px 1px 1px 1px;
-    display: flex;
-    flex-direction: row;
+	border: 1px solid lightgray;
+	border-width: 1px 1px 1px 1px;
+	display: flex;
+	flex-direction: row;
 }
 
 .tweet .image {
-    width: 48px;
-    margin:0.5em;
-    padding:0px;
+	width: 48px;
+	margin:0.5em;
+	padding:0px;
 }
 
 .tweet .image img {
-    border: 1px solid white;
-    border-radius: 0.5em;
-    margin: 0px;
+	border: 1px solid white;
+	border-radius: 0.5em;
+	margin: 0px;
 }
 
 .hbox {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .username {
-    color: gray;
+	color: gray;
 }
 
 .vbox { 
-    display: flex; 
-    flex-direction: column; 
+	display: flex; 
+	flex-direction: column; 
 }
 
+/****************** Crisis Statistics ******************/
 #d3Chart {
-    margin-left: 20vh;
-    margin-top: 20vh;
+	margin-left: 20vh;
+	margin-top: 20vh;
 }
 
 #crisisStats {
-    float: left;
-    width: 750px;
+	float: left;
+	width: 750px;
 }
 
 #statsSidebar {
-  float: right;
-  width: 600px;
+	float: right;
+	width: 600px;
 }
 
 #sequence {
-  width: 600px;
-  height: 70px;
+	width: 600px;
+	height: 70px;
 }
 
 #legend {
-  padding: 10px 0 0 3px;
+	padding: 10px 0 0 3px;
 }
 
 #sequence text, #legend text {
-  fill: #fff;
+	fill: #fff;
 }
 
 #chart {
-  position: relative;
+	position: relative;
 }
 
 #chart path {
-  stroke: #fff;
+	stroke: #fff;
 }
 
 #explanation {
-  position: absolute;
-  top: 220px;
-  left: 305px;
-  width: 140px;
-  text-align: center;
-  color: #666;
-  z-index: -1;
+	position: absolute;
+	top: 220px;
+	left: 305px;
+	width: 140px;
+	text-align: center;
+	color: #666;
+	z-index: -1;
 }
 
 #percentage {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }

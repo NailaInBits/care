@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="resources/css/style.css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Oswald" rel="stylesheet">
+
+  <!-- Js folder 
+    C:\Users\khana\Desktop\4900\carev1\resources\js\map.js-->
+  <script type='text/javascript' src='resources/js/map.js'></script>
+  <script type='text/javascript' src='resources/js/direction.js'></script>
+    <script type='text/javascript' src='resources/js/heatmap.js'></script>
+  
+
+  <title>Help And Resources </title>
+
+</head>
+
+<!-- Image and text -->
+<!--Nav bar Antara's version--> 
+<header>
+  <nav class="navbar navbar-light fixed-top" style="background-color: #A6CFD5;">
+    <a class="navbar-brand" href="#">
+      <img src="resources/images/careLogo.png" width="30" height="30" class="d-inline-block align-top" alt="logo"> C.A.R.E.
+  </a>
+    <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Crisis Tweets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Help and Resources </a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">Crisis Statistics</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#contactUs" data-whatever="@getbootstrap">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+<body>
+
+    <!-- Search needs the icon --> 
+<div class="mx-auto" style="width: 50rem; height: 50rem;">
+     <div class="card-header text-center">
+        <h1>C.A.R.E</h1>
+          <nav class="navbar navbar-light bg-faded">
+          <form class="form-inline my-2 my-lg-0">
+            <div id="mode-selector" class="controls">
+                  <input type="radio" name="type" id="changemode-walking" checked="checked">
+                  <label for="changemode-walking">Walking</label>
+
+                  <input type="radio" name="type" id="changemode-transit">
+                  <label for="changemode-transit">Transit</label>
+
+                   <input type="radio" name="type" id="changemode-driving">
+                   <label for="changemode-driving">Driving</label>
+
+                   <input id="origin-input" class="form-control" type="text" placeholder="Enter an origin location">
+
+                   <input id="destination-input" class="form-control" type="text"
+                    placeholder="Enter a destination location">
+              </div>
+          </form>
+      </nav>
+    </div>
+
+
+    <!-- Displays the map in the middle --> 
+   <div id="map"></div>
+<!-- These need to be clickable --> 
+  <div class="card-body text-center">
+    <h5 class="card-title">What do you need help with?</h5>
+    <ul class="list-group list-group-flush">
+      <li>
+        <a href="#" class="list-group-item list-group-item-action">Shelter</a>
+      </li>
+      <li>
+          <a href="#" class="list-group-item list-group-item-action">Medical</a>
+      </li>
+       <li>
+          <a href="#" class="list-group-item list-group-item-action">Medical</a>
+      </li>
+        <li>
+          <a href="#" class="list-group-item list-group-item-action">Charging Stations</a>
+      </li>
+    </ul>
+  </div>
+</div> <!-- Card, Search, Map, Filters centering ends here --> 
+
+
+
+
+
+</body>
+<!-- Contact Us Form pop up from navbar --> 
+<div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">First Name</label>
+            <input type="text" class="form-control" id="recipient-Fname" placeholder="Antara">
+          </div>
+            <div class="form-group">
+              <label for="recipient-name" class="form-control-label">Last Name</label>
+              <input type="text" class="form-control" id="recipient-Lname" placeholder="Khan">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Your Feedback</label>
+            <textarea class="form-control" id="message-text" placeholder="Thank you!"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+
+
+
+
+     <!-- Js for google map: visualization, places and initmap --> 
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsB2qWG_wf5-5nUBtadNENQVSZrHSm0YI&libraries=visualization&libraries=places&callback=initMap">
+  </script>
+
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

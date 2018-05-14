@@ -60,6 +60,7 @@ var pubnub = new PubNub({
 	subscribeKey:'sub-c-78806dd4-42a6-11e4-aed8-02ee2ddab7fe'
 });
 
+// Update the module with the new tweets
 pubnub.addListener({  
 	message: function(msg) {
 		try {
@@ -70,7 +71,7 @@ pubnub.addListener({
 	} 
 });
 
-//Subscribe to the PubNub Twitter Stream
+// Subscribe to the PubNub Twitter Stream
 pubnub.subscribe({ 
 	channels:['pubnub-twitter']
 });

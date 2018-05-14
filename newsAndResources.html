@@ -74,7 +74,7 @@
 		</div>
 	</div>
 
-	<!-- Tweet Dashboard -->
+	<!-- Tweet Module -->
 	<div class="container-fluid">
 		<div class="col-lg-6">
 			<div id="twitter">
@@ -93,11 +93,67 @@
 		</div>
 	</div>
 
+	<!-- Google Maps Module -->
+	<!-- Search needs the icon --> 
+	<div class="mx-auto" style="width: 50rem; height: 50rem;">
+		<div class="card-header text-center">
+			<nav class="navbar navbar-light bg-faded">
+				<form class="form-inline my-2 my-lg-0">
+					<div id="mode-selector" class="controls">
+						<input type="radio" name="type" id="changemode-walking" checked="checked">
+						<label for="changemode-walking">Walking</label>
+						<input type="radio" name="type" id="changemode-transit">
+						<label for="changemode-transit">Transit</label>
+						<input type="radio" name="type" id="changemode-driving">
+						<label for="changemode-driving">Driving</label>
+						<input id="origin-input" class="form-control" type="text" placeholder="Enter an origin location">
+						<input id="destination-input" class="form-control" type="text" placeholder="Enter a destination location">
+					</div>
+				</form>
+			</nav>
+		</div>
+		
+		<!-- Displays the map in the middle --> 
+		<div id="map"></div>
+		<!-- These need to be clickable --> 
+		<div class="card-body text-center">
+			<h5 class="card-title">What do you need help with?</h5>
+			<ul class="list-group list-group-flush">
+				<li>
+					<a href="#" class="list-group-item list-group-item-action">Shelter</a>
+				</li>
+				<li>
+					<a href="#" class="list-group-item list-group-item-action">Medical</a>
+				</li>
+				<li>
+					<a href="#" class="list-group-item list-group-item-action">Medical</a>
+				</li>
+				<li>
+					<a href="#" class="list-group-item list-group-item-action">Charging Stations</a>
+				</li>
+			</ul>
+		</div>
+	</div>  
+
+	<!-- Javascript Files: -->
+	
+	<!-- Twitter JavaScript -->
+	<script type="text/javascript" src="resources/js/twitter.js"></script>
+
+	<!-- Google Maps Styling JavaScript -->
+	<script type='text/javascript' src='resources/js/map.js'></script>
+
+	<!-- Map Directions JavaScript -->
+	<script type='text/javascript' src='resources/js/direction.js'></script>
+
+	<!-- Heatmap JavaScript -->
+	<script type='text/javascript' src='resources/js/heatmap.js'></script>
+
 	<!-- PubNub JS -->
 	<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.2.min.js"></script>
 
-	<!-- JavaScript -->
-	<script type="text/javascript" src="resources/js/twitter.js"></script>
+	<!-- Google Maps JS -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsB2qWG_wf5-5nUBtadNENQVSZrHSm0YI&libraries=visualization&libraries=places&callback=initMap"></script>
 
 	<!-- jQuery, Popper.js, Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

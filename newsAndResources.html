@@ -77,6 +77,7 @@
 	<!-- Tweet Module -->
 	<div class="container-fluid">
 		<div class="col-lg-6">
+		<div class="row">
 			<div id="twitter">
 				<h2>Hurricane Sandy Twitter Feed</h2>
 				<div id="twitterStatic">
@@ -85,19 +86,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lgtw-6">
-			<div id="feed">
-				<h2>Realtime Twitter Feed</h2>
-				<div id="twitterFeed"></div> 
-			</div>
-		</div>
 	</div>
+	
 
 	<!-- Google Maps Module -->
 	<!-- Search needs the icon --> 
-	<div class="mx-auto" style="width: 50rem; height: 50rem;">
+	<div class="col-lg-6 float-right">
+	<div class="row">
 		<div class="card-header text-center">
-			<nav class="navbar navbar-light bg-faded">
 				<form class="form-inline my-2 my-lg-0">
 					<div id="mode-selector" class="controls">
 						<input type="radio" name="type" id="changemode-walking" checked="checked">
@@ -110,8 +106,8 @@
 						<input id="destination-input" class="form-control" type="text" placeholder="Enter a destination location">
 					</div>
 				</form>
-			</nav>
 		</div>
+	</div>
 		
 		<!-- Displays the map in the middle --> 
 		<div id="map"></div>
@@ -134,6 +130,15 @@
 			</ul>
 		</div>
 	</div>  
+</div>  
+
+	<div class="col-lgtw-6">
+			<div id="feed">
+				<h2>Realtime Twitter Feed</h2>
+				<div id="twitterFeed"></div> 
+			</div>
+		</div>
+
 
 	<!-- Javascript Files: -->
 	

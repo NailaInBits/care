@@ -160,6 +160,14 @@ h3 {
 }
 
 /****************** Google Map ******************/
+#googleMaps {
+	margin-top: 10vh;
+}
+
+#googleMaps li {
+	list-style: none;
+}
+
 #map {
 	height: 400px;
 	width: 100%;

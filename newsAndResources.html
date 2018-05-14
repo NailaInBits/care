@@ -24,10 +24,10 @@
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="#">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="#">News & Resources <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
@@ -86,10 +86,15 @@
 						<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
+				<div id="feed">
+					<h2>Realtime Twitter Feed</h2>
+					<div id="twitterFeed"></div> 
+				</div>
 			</div>
 			<!-- Google Maps Module -->
 			<!-- Search needs the icon --> 
-			<div class="col-lg-6 float-right">
+			<div class="col-lg-6 float-right" id="googleMaps">
+				<h2>Resource Locations</h2>
 				<div class="card-header text-center">
 					<form class="form-inline my-2 my-lg-0">
 						<div id="mode-selector" class="controls">
@@ -127,13 +132,6 @@
 			</div>
 		</div>
 	</div> 
-
-	<div class="col-lgtw-6">
-		<div id="feed">
-			<h2>Realtime Twitter Feed</h2>
-				<div id="twitterFeed"></div> 
-		</div>
-	</div>
 
 	<!-- Javascript Files: -->
 	
